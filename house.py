@@ -1,6 +1,6 @@
 from mcpi.minecraft import Minecraft
-mc = Minecraft.create()
-uid = mc.getPlayerEntityId("Keril1337")
+mc = Minecraft.create("217.182.203.129",28813)
+uid = mc.getPlayerEntityId("aabbcc")
 pos = mc.entity.getPos(uid)
 x = pos.x
 y = pos.y
@@ -159,6 +159,29 @@ mc.setBlocks(x+27,y+6,z+1,x+27,y+9,z+2,d_o)
 mc.setBlocks(x+27,y+6,z+10,x+27,y+9,z+11,d_o)
 mc.setBlocks(x+26,y+9,z+1,x+26,y+9,z+2,d_o)
 mc.setBlocks(x+26,y+9,z+10,x+26,y+9,z+11,d_o)
+
 #забор
 mc.setBlocks(x+13+1,y+6,z,x+21,y+6,z,188)
 mc.setBlocks(x+13+1,y+6,z+12,x+21,y+6,z+12,188,2)
+bl = 35,15
+wh = 35
+gr = 35,7
+#Парус
+parus = [bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,gr,bl,bl,bl,bl,gr,bl,
+         bl,bl,gr,gr,bl,bl,gr,gr,bl,
+         bl,bl,bl,wh,wh,wh,gr,bl,bl,
+         bl,bl,bl,bl,wh,bl,wh,bl,bl,
+         bl,bl,gr,wh,bl,wh,gr,bl,bl,
+         gr,gr,bl,bl,bl,bl,bl,gr,gr,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl]
+count=0
+for s in range(8):
+    for i in range(9):
+        for j in range(8):
+            mc.setBlock(x+13,y-s,z+j,parus[count])
+            count+=1
+mc.setBlocks(x+12,y+6,z+6,x+12,y+13,z+6,dub)
+mc.setBlocks(x+17,y+6,z+6,x+17,y+17,z+6,dub)
+
+
