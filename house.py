@@ -1,5 +1,5 @@
 from mcpi.minecraft import Minecraft
-mc = Minecraft.create("217.182.203.129",28813)
+mc = Minecraft.create("217.182.203.129",28813)#"
 uid = mc.getPlayerEntityId("aabbcc")
 pos = mc.entity.getPos(uid)
 x = pos.x
@@ -23,10 +23,10 @@ plate = 126,5
 d_o=0
 stup = 164,4
 dub = 17
-decor_1=     [0,0,0,0,0,0,plate,0,0,0,0,0,0, #14 по x 13 по y
-             0,0,0,0,0,0,0,0,0,0,0,0,0,
-             0,0,0,0,0,0,0,0,0,0,0,0,0,
-             0,0,0,0,0,188,0,188,0,0,0,0,0,
+decor_1=    [0,0,0,0,0,0,plate,0,0,0,0,0,0, #14 по x 13 по y
+            0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,188,0,188,0,0,0,0,0,
              0,0,0,0,0,188,d_o,188,0,0,0,0,0,
              0,0,0,0,188,dub,d_o,dub,188,0,0,0,0,
              0,0,0,188,188,d_o,d_o,0,188,188,0,0,0,
@@ -165,23 +165,69 @@ mc.setBlocks(x+13+1,y+6,z,x+21,y+6,z,188)
 mc.setBlocks(x+13+1,y+6,z+12,x+21,y+6,z+12,188,2)
 bl = 35,15
 wh = 35
-gr = 35,7
+gr= 35,8
+grf = 35,7
 #Парус
-parus = [bl,bl,bl,bl,bl,bl,bl,bl,bl,
-         bl,bl,gr,bl,bl,bl,bl,gr,bl,
-         bl,bl,gr,gr,bl,bl,gr,gr,bl,
-         bl,bl,bl,wh,wh,wh,gr,bl,bl,
-         bl,bl,bl,bl,wh,bl,wh,bl,bl,
-         bl,bl,gr,wh,bl,wh,gr,bl,bl,
-         gr,gr,bl,bl,bl,bl,bl,gr,gr,
-         bl,bl,bl,bl,bl,bl,bl,bl,bl]
+parus =[0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,
+        bl,bl,gr,gr,grf,gr,gr,gr,gr,bl,bl,
+        bl,bl,gr,wh,wh,grf,wh,wh,gr,bl,bl,
+        bl,bl,wh,wh,wh,wh,bl,bl,wh,bl,bl,
+        bl,bl,wh,gr,wh,wh,bl,bl,wh,bl,bl,
+        bl,bl,wh,wh,grf,grf,grf,wh,wh,bl,bl,
+        bl,bl,grf,bl,bl,bl,bl,bl,grf,bl,bl,
+        bl,bl,gr,gr,wh,wh,wh,gr,gr,bl,bl,
+        0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0]
+
+
+
+parus2 = [0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0,
+         0,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,
+         0,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,
+         0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0]
+
+
+
+
+parus3 =[0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0,
+         0,bl,bl,0,0,0,0,0,0,0,0,0,bl,bl,0,
+         bl,bl,0,0,0,0,0,0,0,0,0,0,0,bl,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,0,0,0,0,0,0,0,0,0,0,0,0,0,bl,
+         bl,bl,0,0,0,0,0,0,0,0,0,0,0,bl,bl,
+         0,bl,bl,0,0,0,0,0,0,0,0,0,bl,bl,0,
+         0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0]
+
+#парус
 count=0
-for s in range(8):
-    for i in range(9):
-        for j in range(8):
-            mc.setBlock(x+13,y-s,z+j,parus[count])
-            count+=1
-mc.setBlocks(x+12,y+6,z+6,x+12,y+13,z+6,dub)
-mc.setBlocks(x+17,y+6,z+6,x+17,y+17,z+6,dub)
+for s in range(9):
+    for j in range(11):
+        mc.setBlock(x+16,y-s+20,z+j+1,parus[count])
+        count+=1
 
-
+count = 0
+for i in range(11):
+    for j in range(13):
+        mc.setBlock(x+17,y-i+21,z+j,parus2[count])
+        count+=1
+count=0
+for i in range(13):
+    for j in range(15):
+        mc.setBlock(x+18,y-i+22,z+j-1,parus3[count])
+        count+=1
+mc.setBlocks(x+19,y+6,z+6,x+19,y+22,z+6,17,1)
+mc.setBlocks(x+19,y+13,z,x+19,y+13,z+12,17,1)
+for i in range(6):
+    mc.setBlocks(x+19,y+i+14,z+i,x+19,y+i+14,z+5,191)
+    mc.setBlocks(x + 19, y + i + 14, z - i+12, x + 19, y + i + 14, z +7 , 191)
