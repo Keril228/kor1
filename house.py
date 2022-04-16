@@ -245,8 +245,6 @@ parus2 = [0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0,
          0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0]
 
 
-
-
 parus3 =[0,0,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,bl,0,0,
          0,bl,bl,0,0,0,0,0,0,0,0,0,bl,bl,0,
          bl,bl,0,0,0,0,0,0,0,0,0,0,0,bl,bl,
@@ -305,10 +303,12 @@ mc.setBlocks(x+25,y+8,z+10,x+26,y+8,z+11,d_o)
 mc.setBlock(x+22,y+9,z+6,112)
 mc.setBlock(x+22,y+10,z+6,178)
 
-s = 0
-
 mc.setBlocks(x+15,y-1,z+-1,x+15,y+5,z-1,188)
 mc.setBlocks(x+17,y-1,z-1,x+17,y+5,z-1,188)
 for i in range(7):
     mc.setBlock(x+16,y-1+i,z-1,65,1)
 mc.setBlock(x+16,y+6,z,0)
+s = 0
+for i in range(2):
+    mc.setBlock(x+22,y+8,z+s,dub)
+    s+=12
