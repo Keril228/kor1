@@ -1,6 +1,6 @@
 from mcpi.minecraft import Minecraft
-mc = Minecraft.create("217.182.203.129",28813)#"
-uid = mc.getPlayerEntityId("aabbcc")
+mc = Minecraft.create()#"217.182.203.129",28813
+uid = mc.getPlayerEntityId("Keril1337")
 pos = mc.entity.getPos(uid)
 x = pos.x
 y = pos.y
@@ -37,7 +37,6 @@ decor_1=    [0,0,0,0,0,0,plate,0,0,0,0,0,0, #14 по x 13 по y
              0,188,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,188,0,
              188,0,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,dub,0,
              188,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,d_o,188]
-
 
 d_o=5,5
 
@@ -160,9 +159,62 @@ mc.setBlocks(x+27,y+6,z+10,x+27,y+9,z+11,d_o)
 mc.setBlocks(x+26,y+9,z+1,x+26,y+9,z+2,d_o)
 mc.setBlocks(x+26,y+9,z+10,x+26,y+9,z+11,d_o)
 
+
+
 #забор
 mc.setBlocks(x+13+1,y+6,z,x+21,y+6,z,188)
 mc.setBlocks(x+13+1,y+6,z+12,x+21,y+6,z+12,188,2)
+#люки и золото
+z_1=41
+
+
+zoloto_1 = [z_1,0,0,0,0,0,z_1,
+          z_1,0,0,0,0,0,0,
+          z_1,0,0,0,0,0,0,
+          z_1,0,0,0,0,0,0,
+          0,0,z_1,0,z_1,0,0,
+          z_1,0,z_1,z_1,z_1,0,z_1]
+
+zoloto_2 =[z_1,z_1,0,0,0,z_1,z_1,
+          z_1,0,0,0,0,0,z_1,
+          z_1,z_1,0,z_1,0,0,0,
+          z_1,z_1,0,0,0,0,0,
+          z_1,0,z_1,0,z_1,0,0,
+          z_1,z_1,0,z_1,z_1,z_1,z_1]
+
+zoloto_3 =[z_1,z_1,z_1,z_1,z_1,z_1,0,
+          z_1,z_1,0,z_1,z_1,z_1,z_1,
+          z_1,z_1,0,z_1,0,z_1,0,
+          z_1,z_1,0,0,0,0,z_1,
+          z_1,z_1,z_1,z_1,z_1,z_1,z_1,
+          z_1,z_1,z_1,z_1,z_1,z_1,z_1]
+
+mc.setBlocks(x+14,y+6,z+4,x+17,y+6,z+8,96)
+
+for i in range(2):
+    mc.setBlocks(x+14,y+5-i,z+4,x+17,y+5-i,z+8,0)
+
+for i in range(3):
+    mc.setBlocks(x+13,y+3-i,z+3,x+18,y+3-i,z+9,0)
+
+for j in range(6):
+    for s in range(7):
+        mc.setBlock(x+18-j,y+3,z+3+s,zoloto_1[count])
+        count+=1
+
+count=0
+for j in range(6):
+    for s in range(7):
+        mc.setBlock(x+18-j,y+2,z+3+s,zoloto_2[count])
+        count+=1
+
+count=0
+for j in range(6):
+    for s in range(7):
+        mc.setBlock(x+18-j,y+1,z+3+s,zoloto_3[count])
+        count+=1
+
+
 bl = 35,15
 wh = 35
 gr= 35,8
@@ -231,3 +283,24 @@ mc.setBlocks(x+19,y+13,z,x+19,y+13,z+12,17,1)
 for i in range(6):
     mc.setBlocks(x+19,y+i+14,z+i,x+19,y+i+14,z+5,191)
     mc.setBlocks(x + 19, y + i + 14, z - i+12, x + 19, y + i + 14, z +7 , 191)
+
+#палуба
+count = 0
+zabor = 85
+paluba = [0,0,0,dub,zabor,zabor,zabor,zabor,zabor,dub,0,0,0,
+          0,0,0,zabor,0,0,0,0,0,zabor,0,0,0,
+          0,dub,zabor,zabor,0,0,0,0,0,zabor,zabor,dub,0,
+          zabor,zabor,0,0,0,0,0,0,0,0,0,zabor,zabor,
+          zabor,0,0,0,0,0,0,0,0,0,0,0,zabor,
+          zabor,0,0,0,0,0,0,0,0,0,0,0,zabor,
+          zabor,0,0,0,0,0,0,0,0,0,0,0,zabor,
+          dub,0,0,0,0,0,0,0,0,0,0,0,dub]
+
+for i in range(8):
+    for j in range(13):
+        mc.setBlock(x-i+29,y+9,z+j,paluba[count])
+        count+=1
+mc.setBlocks(x+25,y+8,z+1,x+26,y+8,z+2,d_o)
+mc.setBlocks(x+25,y+8,z+10,x+26,y+8,z+11,d_o)
+mc.setBlock(x+22,y+9,z+6,112)
+mc.setBlock(x+22,y+10,z+6,178)
